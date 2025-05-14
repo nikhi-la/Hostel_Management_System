@@ -80,6 +80,12 @@ if(isset($_SESSION["user_id"]) && ($_SESSION["user_type"]=="student") )
           $isVacatingMonthfeeAlreadyAdded="select * from tbl_messfee where user_id = '".$_SESSION["user_id"]."' AND month = MONTH(CURRENT_DATE) AND year = YEAR(CURRENT_DATE)";
           $rowIsVacatingMonthfeeAlreadyAdded=$con->query($isVacatingMonthfeeAlreadyAdded);
           if(mysqli_num_rows($rowIsVacatingMonthfeeAlreadyAdded)>0){
+            $status = 3; # 3 means going to vacate. Payment remains
+                  $updateQry = "UPDATE tbl_student SET verification_status='$status' WHERE user_id='" . $_SESSION["user_id"] . "'";
+                  $con->query($updateQry);
+
+                  $updateParentQry = "UPDATE tbl_parent SET verification_status='$status' WHERE student_id='" .$_SESSION["user_id"] . "'";
+                  $con->query($updateParentQry);
 
           }
           else{
@@ -89,7 +95,12 @@ if(isset($_SESSION["user_id"]) && ($_SESSION["user_type"]=="student") )
             $dataVacatingMonthAttendance=$rowVacatingMonthAttendance->fetch_assoc();
 
             if($dataVacatingMonthAttendance["present_days"]==0){
+              $status = 3; # 3 means going to vacate. Payment remains
+                  $updateQry = "UPDATE tbl_student SET verification_status='$status' WHERE user_id='" . $_SESSION["user_id"] . "'";
+                  $con->query($updateQry);
 
+                  $updateParentQry = "UPDATE tbl_parent SET verification_status='$status' WHERE student_id='" .$_SESSION["user_id"] . "'";
+                  $con->query($updateParentQry);
             }
             else{
 

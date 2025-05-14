@@ -114,7 +114,7 @@ if(isset($_POST["btnsave"]))
             <form id="form1" name="form1" action="" method="post" enctype="multipart/form-data" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
               <div class="row gy-4">
 
-                <div class="col-md-4">
+                <div class="col-md-4" style="font-size:20px;" >
                   Current Password
                 </div>
 
@@ -123,7 +123,7 @@ if(isset($_POST["btnsave"]))
                   <input type="password" name="currpassword" id="currpassword" class="form-control" autocomplete="off" required />
                 </div>
                 <br><br><br>
-                <div class="col-md-4">
+                <div class="col-md-4" style="font-size:20px;" >
                   New Password
                 </div>
 
@@ -133,7 +133,7 @@ if(isset($_POST["btnsave"]))
 
                 <br><br><br>
 
-                <div class="col-md-4">
+                <div class="col-md-4" style="font-size:20px;" >
                   Confirm Password
                 </div>
 
@@ -145,8 +145,8 @@ if(isset($_POST["btnsave"]))
                 
                 <br><br><br><br><br><br>
                 <div class="col-md-12 text-center">
-                  <input type="submit" name="btnsave" id="btnsave" value="Submit" />
-                  <input type="reset" name="btncancel" id="btncancel" value="Cancel" />
+                  <input type="submit" name="btnsave" style="font-size:20px;"  id="btnsave" value="Submit" />
+                  <input type="reset" name="btncancel" style="font-size:20px;"  id="btncancel" value="Cancel" />
                  
                 </div>
 

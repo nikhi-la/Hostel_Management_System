@@ -197,7 +197,7 @@ include("Assets/Connection/Connection.php");
         <div class="row gy-4">
           <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
             <h1>Home Away From Home</h1>
-            <p>We are team of talented designers making websites with Bootstrap</p>
+            <br><br>
             <div class="d-flex">
               <a href="Login.php" class="btn-get-started">Login</a>
               

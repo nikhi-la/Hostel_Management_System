@@ -11,7 +11,7 @@ require '../Assets/phpmailer/src/SMTP.php';
 $selUser="select * from tbl_parent where user_id='".$_SESSION["user_id"]."'";
 $rowu=$con->query($selUser);
 $datau=$rowu->fetch_assoc();
-if ($datau["verification_status"]==1 $data['verification_status']==3)
+if ($datau["verification_status"]==1 || $datau['verification_status']==3)
 {
 ?>
 <!DOCTYPE html>

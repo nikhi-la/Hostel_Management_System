@@ -17,6 +17,22 @@
     <link rel="shortcut icon" href="../Assets/Template/Warden/images/Logo.png" />
 </head>
 <style>
+     @media print {
+    .sidebar, 
+    .navbar, 
+    .back-button, 
+    .front-button, 
+    .footer, 
+    .btn, 
+    .page-footer {
+        display: none !important;
+    }
+
+    .main-panel {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+}
 .back-button {
     position: fixed;
     bottom: 40px;
@@ -115,6 +131,8 @@
                                 </table>
                             </div>
                         </div>
+                        <!-- Print Button -->
+<button class="btn btn-info btn-rounded btn-icon front-button" onclick="printPage()">🖨</button>
                         <!-- Back Button -->
                         <button class="btn btn-dark btn-rounded btn-icon back-button" onclick="goBack()">⬅</button>
                        
@@ -134,4 +152,7 @@ function goBack() {
     window.history.back();
 }
 
+function printPage() {
+    window.print();
+}
 </script>

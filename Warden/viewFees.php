@@ -17,6 +17,22 @@
     <link rel="shortcut icon" href="../Assets/Template/Warden/images/Logo.png" />
 </head>
 <style>
+    @media print {
+    .sidebar, 
+    .navbar, 
+    .back-button, 
+    .front-button, 
+    .footer, 
+    .btn, 
+    .page-footer {
+        display: none !important;
+    }
+
+    .main-panel {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+}
 .back-button {
     position: fixed;
     bottom: 40px;
@@ -109,7 +125,7 @@
         $selRequest="select * from tbl_messfee mf inner join tbl_hostelrentpayment hp on mf.user_id=hp.user_id inner join tbl_student s on s.user_id=mf.user_id and mf.month=hp.hostelrent_month and mf.year=hp.hostelrent_year where mf.month='".$_POST["month"]."' and mf.year='".$_POST["year"]."' order by year desc,month asc,student_firstname asc";
     }
     else{
-      $selRequest="select mf.*,hp.*,s.*,mf.payment_status AS mess_payment_status,hp.payment_status AS hostel_payment_status from tbl_messfee mf inner join tbl_hostelrentpayment hp on mf.user_id=hp.user_id inner join tbl_student s on s.user_id=mf.user_id and mf.month=hp.hostelrent_month and mf.year=hp.hostelrent_year order by year desc,month asc,student_firstname asc";
+      $selRequest="select mf.*,hp.*,s.*,mf.payment_status AS mess_payment_status,hp.payment_status AS hostel_payment_status from tbl_messfee mf inner join tbl_hostelrentpayment hp on mf.user_id=hp.user_id inner join tbl_student s on s.user_id=mf.user_id and mf.month=hp.hostelrent_month and mf.year=hp.hostelrent_year order by year desc,month desc,student_firstname asc";
     }
     $row=$con->query($selRequest);
       $i=0;
@@ -141,6 +157,9 @@
                                 </form>                           
                             </div>
                         </div>
+                        
+                         <!-- Print Button -->
+<button class="btn btn-info btn-rounded btn-icon front-button" onclick="printPage()">🖨</button>
                         <!-- Back Button -->
                         <button class="btn btn-dark btn-rounded btn-icon back-button" onclick="goBack()">⬅</button>
                   
@@ -170,4 +189,7 @@ function goBack() {
     window.history.back();
 }
 
+function printPage() {
+    window.print();
+}
 </script>

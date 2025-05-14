@@ -22,7 +22,6 @@
                 <li class="nav-item"> <a class="nav-link" href="addRoomType.php">Add Room Type</a></li>
                   <li class="nav-item"> <a class="nav-link" href="addRoomDetails.php">Add Rooms</a></li>
                   <li class="nav-item"> <a class="nav-link" href="viewRoomDetails.php">View Rooms</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="viewRoompreference.php">Room Preference</a></li>
                 </ul>
               </div>
             </li>

@@ -151,7 +151,7 @@
                                         <div class="col-6 grid-margin">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h4 class="card-title" style="font-size: 25px;">Add Expenses</h4>
+                                                    <h4 class="card-title" style="font-size: 25px;">Add Mess Fee</h4>
                                                     <form id="form1" name="form1" class="forms-sample" method="post" action="addMessFee.php">
                                                         <div class="form-group row">
                                                             <label for="month" class="col-sm-3 col-form-label" style="font-size: 15px;color: black;text-align: left;">Month</label>
@@ -161,7 +161,7 @@
                                                         </div>
 
                                                         <div class="form-group row">
-                                                            <label for="commonexpense" class="col-sm-3 col-form-label" style="font-size: 15px;color: black;text-align: left;">Expense</label>
+                                                            <label for="commonexpense" class="col-sm-3 col-form-label" style="font-size: 15px;color: black;text-align: left;">Mess Expense</label>
                                                             <div class="col-sm-9">
                                                             
                                                             <?php   
@@ -188,7 +188,7 @@
                                                             }
                                                             else{
                                                                 ?>
-                                                                    <div class="btn btn-info btn-rounded btn-fw" style="font-size: 15px;">Expense Added</div>
+                                                                    <div class="btn btn-info btn-rounded btn-fw" style="font-size: 15px;">Mess Fee Added</div>
                                                                 <?php
                                                             }
                                                         ?>

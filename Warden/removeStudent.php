@@ -81,7 +81,7 @@
                     <div class="col-lg-12 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Student List</h4>
+                                <h4 class="card-title" >Student List</h4>
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
@@ -100,7 +100,7 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $selStudent = "SELECT *  FROM tbl_student s INNER JOIN tbl_user u ON s.user_id = u.user_id inner join tbl_roompreference rp on s.user_id=rp.user_id inner join tbl_room r on rp.room_id=r.room_id where verification_status=3 ";
+                                        $selStudent = "SELECT *  FROM tbl_student s INNER JOIN tbl_user u ON s.user_id = u.user_id inner join tbl_roompreference rp on s.user_id=rp.user_id inner join tbl_room r on rp.room_id=r.room_id where verification_status=1 or verification_status=3 ";
                                         $row = $con->query($selStudent);
                                         while ($data = $row->fetch_assoc()) {
                                             ?>
@@ -139,9 +139,17 @@
                                                                 ?><a href="removeStudent.php?nid=<?php echo $data['user_id'];?>" class="badge badge-danger" style="font-size:13px;">Payment Not Completed</a><?php
                                                             }
                                                             else{
-                                                            ?>
+                                                                $selStud="select verification_status from tbl_student where user_id='".$data['user_id']."'";
+                                                                $rowSelStud=$con->query($selStud);
+                                                                $dataSelStud=$rowSelStud->fetch_assoc();
+                                                                if($dataSelStud["verification_status"]==3)
+                                                                {
+                                                                    ?>
                                                                 <a href="payBackCD.php?vid=<?php echo $data['user_id'];?>&rid=<?php echo $data['room_id'];?>" class="badge badge-info" style="font-size:13px;">Pay Caution Deposit</a><?php
-                                                            }
+                                                            
+                                                                }
+                                                               
+                                                           }
                                                         ?>
                                                 </td>
                                             </tr>

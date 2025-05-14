@@ -17,6 +17,22 @@
     <link rel="shortcut icon" href="../Assets/Template/Warden/images/Logo.png" />
 </head>
 <style>
+    @media print {
+    .sidebar, 
+    .navbar, 
+    .back-button, 
+    .front-button, 
+    .footer, 
+    .btn, 
+    .page-footer {
+        display: none !important;
+    }
+
+    .main-panel {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+}
 .back-button {
     position: fixed;
     bottom: 40px;
@@ -76,7 +92,7 @@
                                     <tbody>
                                     <?php
     
-    $selRequest="select * from tbl_student order by student_firstname";
+    $selRequest="select * from tbl_student order by verification_status,student_firstname ";
     $row=$con->query($selRequest);
       $i=0;
       while($data=$row->fetch_assoc())
@@ -90,7 +106,13 @@
             if($data["caution_deposit_status"]==0) {
                 ?><div style="color:red;font-weight: bold;font-size: 16px;"><?php echo "Not Paid";?></div><?php
             }else{
-                ?><div style="color:green;font-weight: bold;font-size: 16px;";><?php echo "Paid";?></div><?php
+                if($data["verification_status"]==4){
+                    ?><div style="color:red;font-weight: bold;font-size: 16px;";><?php echo "Returned";?></div><?php
+                }
+                else{
+                    ?><div style="color:green;font-weight: bold;font-size: 16px;";><?php echo "Paid";?></div><?php
+                }
+                
             }?>
             </td>
         </tr>
@@ -103,6 +125,8 @@
                                 </form>                           
                             </div>
                         </div>
+                        <!-- Print Button -->
+<button class="btn btn-info btn-rounded btn-icon front-button" onclick="printPage()">🖨</button>
                         <!-- Back Button -->
                         <button class="btn btn-dark btn-rounded btn-icon back-button" onclick="goBack()">⬅</button>
                         
@@ -130,6 +154,10 @@
     
 function goBack() {
     window.history.back();
+}
+
+function printPage() {
+    window.print();
 }
 
 </script>

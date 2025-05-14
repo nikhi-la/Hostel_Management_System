@@ -114,7 +114,8 @@ if(isset($_POST["btnlogin"]))
 		            </div>
 	          </form>
 		          <p class="text-center"> <a  href="forgotPassword.php">Forgot Password</a></p>
-		          <p class="text-center"> <a  href="Guest/newStudent.php">Don't have an account?Sign In</a></p>
+		          <p class="text-center"> <a  href="Guest/newStudent.php">Don't have an account?Sign Up</a></p>
+				  <p class="text-center"> <a  href="index.php">Home</a></p>
 		        </div>
 		      </div>
 				</div>

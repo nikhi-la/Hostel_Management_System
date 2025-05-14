@@ -97,7 +97,7 @@ if ($datau["verification_status"] == 1 || $datau["verification_status"] == 3) {
                             </tr>
 
                             <?php
-                             $selRequest = "select * from tbl_messfee mf inner join tbl_hostelrentpayment hp on mf.user_id=hp.user_id where mf.user_id='".$_SESSION["user_id"]."' and mf.month=hp.hostelrent_month and mf.year=hp.hostelrent_year order by year desc,month asc";
+                             $selRequest = "select * from tbl_messfee mf inner join tbl_hostelrentpayment hp on mf.user_id=hp.user_id where mf.user_id='".$_SESSION["user_id"]."' and mf.month=hp.hostelrent_month and mf.year=hp.hostelrent_year order by year desc,month desc";
                              //echo $selRequest;
                              $row = $con->query($selRequest);
                             $i = 0;

@@ -30,6 +30,13 @@
 .back-button:hover {
     background-color: #555;
 }
+
+h2{
+  font-size: 26px;
+}
+h3{
+  font-size: 24px;
+}
 .front-button {
     position: fixed;
     bottom: 40px;

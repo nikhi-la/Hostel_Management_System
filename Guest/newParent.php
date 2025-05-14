@@ -119,40 +119,40 @@ if(isset($_POST["btnsave"]))
               <div class="row gy-4">
 
                 <div class="col-md-4">
-                  <label for="name" class="pb-2">Name</label>
+                  <label for="name"  style="font-size:22px;" class="pb-2">Name</label>
                   <input type="text" name="name" id="name"  class="form-control" pattern="[A-Za-z ]+" title="Only letters are allowed" autocomplete="off" required=""/>
                 </div>
 
 
                 <div class="col-md-6">
-                    <label for="relation" class="pb-2">Relation</label>
+                    <label for="relation" style="font-size:22px;" class="pb-2">Relation</label>
                     <input type="text" name="relation" id="relation" class="form-control" pattern="[A-Za-z]+" title="Only letters are allowed" required="required" autocomplete="off"/>
                 </div>
 
                 <div class="col-md-6">
-                    <label for="email" class="pb-2">Email</label>
+                    <label for="email"  style="font-size:22px;" class="pb-2">Email</label>
                     <input type="text" name="email" id="email" class="form-control" onblur="validateEmail(this)" required="required" autocomplete="off"/>
                 </div>
 
                 <div class="col-md-6">
-                    <label for="contact" class="pb-2">Contact</label>
+                    <label for="contact" style="font-size:22px;" class="pb-2">Contact</label>
                     <input type="text" name="contact" id="contact" class="form-control" pattern="[0-9]{10}" title="Phone number must be 10 digits"   required="required" autocomplete="off"/>
                 </div>
 
                 <div class="col-md-6">
-                    <label for="photo" class="pb-2">Photo</label>
+                    <label for="photo" style="font-size:22px;" class="pb-2">Photo</label>
                     <input type="file" name="photo" id="photo" required="required" class="form-control"  autocomplete="off"/>
                 </div>
 
                 <div class="col-md-6">
-                    <label for="proof" class="pb-2">Proof</label>
+                    <label for="proof" style="font-size:22px;" class="pb-2">Proof</label>
                     <input type="file" name="proof" id="proof"  required="required" class="form-control" autocomplete="off"/>
                 </div>
 
                 <div class="col-md-12 text-center">
 
-                  <input type="submit" name="btnsave" id="btnsave" value="Add"/>
-                  <input type="reset" name="btncancel" id="btncancel" value="Cancel" />
+                  <input type="submit"  style="font-size:22px;" name="btnsave" id="btnsave" value="Add"/>
+                  <input type="reset"   style="font-size:22px;"name="btncancel" id="btncancel" value="Cancel" />
                 </div>
 
               </div>

@@ -17,6 +17,29 @@
     <link rel="shortcut icon" href="../Assets/Template/Warden/images/Logo.png" />
 </head>
 <style>
+    @media print {
+    .sidebar, 
+    .navbar, 
+    .back-button, 
+    .front-button, 
+    .footer, 
+    .btn, 
+    .page-footer,
+    .change-column {
+        display: none !important;
+    }
+
+    .main-panel {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    body {
+        -webkit-print-color-adjust: exact;
+    }
+}
+
+
 .back-button {
     position: fixed;
     bottom: 40px;
@@ -104,7 +127,7 @@
       <th>Student Name</th>
       <th>Date</th>
       <th>Attendance</th>
-      <th>Change To</th>
+      <th class="change-column">Change To</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -170,6 +193,8 @@
 </form>
                             </div>
                         </div>
+                         <!-- Print Button -->
+<button class="btn btn-info btn-rounded btn-icon front-button" onclick="printPage()">🖨</button>
                         <!-- Back Button -->
                         <button class="btn btn-dark btn-rounded btn-icon back-button" onclick="goBack()">⬅</button>
                        
@@ -189,4 +214,7 @@ function goBack() {
     window.history.back();
 }
 
+function printPage() {
+    window.print();
+}
 </script>

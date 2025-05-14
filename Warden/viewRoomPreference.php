@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Add Rooms</title>
+    <title>Room Preferences</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="../Assets/Template/Warden/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../Assets/Template/Warden/vendors/flag-icon-css/css/flag-icon.min.css">
@@ -17,6 +17,23 @@
     <link rel="shortcut icon" href="../Assets/Template/Warden/images/Logo.png" />
 </head>
 <style>
+    @media print {
+    .sidebar, 
+    .navbar, 
+    .back-button, 
+    .front-button, 
+    .footer, 
+    .btn, 
+    .page-footer {
+        display: none !important;
+    }
+
+    .main-panel {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+}
+
 .back-button {
     position: fixed;
     bottom: 40px;
@@ -95,6 +112,9 @@
                                 </table>
                             </div>
                         </div>
+                        <!-- Print Button -->
+<button class="btn btn-info btn-rounded btn-icon front-button" onclick="printPage()">🖨</button>
+
                         <!-- Back Button -->
                         <button class="btn btn-dark btn-rounded btn-icon back-button" onclick="goBack()">⬅</button>
                        
@@ -113,5 +133,8 @@
 function goBack() {
     window.history.back();
 }
-
+function printPage() {
+    window.print();
+}
+</script>
 </script>
